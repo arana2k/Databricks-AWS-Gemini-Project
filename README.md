@@ -4,8 +4,7 @@
 
 An automated pipeline that uses **Google Gemini** to generate realistic synthetic retail data and uploads it to **AWS S3**, with optional downstream triggering of a **Databricks** ingestion job. The pipeline is designed to run as an **AWS Lambda** function, triggered via a **Telegram bot**.
 
-Demo Video: [Telegram - AWS - Databricks - Pipeline
-](https://www.youtube.com/watch?v=9TGptS6rPjU)
+
 
 ---
 
