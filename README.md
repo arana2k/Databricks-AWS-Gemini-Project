@@ -38,7 +38,7 @@ Progress updates are sent back to the user via Telegram after each step.
 
 ## Databricks Pipeline
 
-The databricks pipeline code can be found in this repository: [databricks-retail](https://github.com/kaustubhgupta/databricks-retail)
+The databricks pipeline code can be found in this repository: [databricks-retail](https://github.com/arana2k/Databricks-Retail)
 
 ## Project Structure
 
