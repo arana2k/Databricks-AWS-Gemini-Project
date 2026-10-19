@@ -1,0 +1,44 @@
+{
+  "online_orders": {
+    "columns": ["order_id", "order_ts", "customer_id", "sku_id", "qty", "list_price", "discount", "payment_mode"],
+    "id_prefix": "ONL",
+    "id_column": "order_id",
+    "gold_table_id_column": "order_id",
+    "description": "Online retail orders. order_id format: ONL{9-digit-number}. order_ts: timestamp like '2026-01-31 15:23:59.974339'. customer_id: C{7-digit-number}. sku_id: SKU{6-digit-number}. qty: 1-10 integer. list_price: float 100-5000. discount: float or null (~40% null). payment_mode: one of UPI, NETBANKING, CARD, WALLET."
+  },
+  "online_customers": {
+    "columns": ["customer_id", "full_name", "email", "mobile_number", "city", "state", "zipcode", "signup_date"],
+    "id_prefix": "C",
+    "id_column": "customer_id",
+    "gold_table_id_column": "online_customer_id",
+    "description": "Online retail customers. customer_id: C{7-digit-number}. full_name: realistic English names. email: lowercase realistic. mobile_number: 10-digit or +91 format. city/state: US city/state abbreviation. zipcode: 5-digit. signup_date: date YYYY-MM-DD between 2020-2024."
+  },
+  "online_products": {
+    "columns": ["sku_id", "product_name", "category", "brand", "price", "currency", "is_active"],
+    "id_prefix": "SKU",
+    "id_column": "sku_id",
+    "gold_table_id_column": "product_id",
+    "description": "Online product catalog (SCD2). sku_id: SKU{6-digit-number}. product_name: 'Product N' style or descriptive. category: Electronics, Home, Grocery, Apparel, Sports. brand: BrandA, BrandB, BrandC, BrandD. price: float 50-5000. currency: USD. is_active: Y or N."
+  },
+  "offline_orders": {
+    "columns": ["txn_id", "txn_time", "customer_id", "sku", "quantity", "mrp", "discount", "payment_mode", "store_num"],
+    "id_prefix": "OFF",
+    "id_column": "txn_id",
+    "gold_table_id_column": "order_id",
+    "description": "Offline/in-store retail orders. txn_id format: OFF{9-digit-number}. txn_time: timestamp like '2026-01-30 15:23:57.444694'. customer_id: COFF{6-digit-number}. sku: SKU{6-digit-number}. quantity: 1-10 integer. mrp: float 100-5000. discount: float or null (~50% null). payment_mode: CASH, CARD, UPI. store_num: STR{3-digit-number}."
+  },
+  "offline_customers": {
+    "columns": ["cust_id", "name", "email", "phone", "city", "state", "pincode", "store_id"],
+    "id_prefix": "COFF",
+    "id_column": "cust_id",
+    "gold_table_id_column": "offline_customer_id",
+    "description": "Offline/in-store retail customers. cust_id: COFF{6-digit-number}. name: realistic English name. email: realistic. phone: 10-digit number. city/state: US city/state abbreviation. pincode: 5-digit. store_id: integer 1-100."
+  },
+  "offline_products": {
+    "columns": ["sku", "name", "category_name", "brand_name", "mrp_price", "tax_rate", "file_date"],
+    "id_prefix": "SKU",
+    "id_column": "sku",
+    "gold_table_id_column": "product_id",
+    "description": "Offline product catalog (SCD2). sku: SKU{6-digit-number}. name: product name (mixed case like 'product 0', 'PRODUCT 1'). category_name: Electronics, Home, Grocery, Apparel, Sports. brand_name: BrandA, BrandB, BrandC, BrandD. mrp_price: float 100-6000. tax_rate: float 0.005-0.20. file_date: integer like 20260209 (YYYYMMDD)."
+  }
+}
